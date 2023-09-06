@@ -1,0 +1,22 @@
+#navbar {
+    width: 250px;
+}
+
+
+
+h3 {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: #29365E;
+}
+
+.iconNavbar {
+    height: 20px;
+    padding-right: 10px;
+}
+
+@media (max-width: 991px) {
+    #navbar {
+        width: 150px;
+    }
+    
+}
