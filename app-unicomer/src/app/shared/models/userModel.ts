@@ -1,5 +1,5 @@
 export interface UserModel {
     username: string,
     password: string,
-    balance: number
+    balance?: number
 }

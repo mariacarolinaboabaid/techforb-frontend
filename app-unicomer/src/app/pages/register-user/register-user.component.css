@@ -1,0 +1,59 @@
+div.container-fluid.p-0.d-flex {
+    height: 100vh;
+    background-image: url('../../../assets/background-login.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div#ctnForm {
+    background-color: #29365E;
+    opacity: 90%;
+    box-shadow: -3px 0px 6px #29365E;
+}
+form {
+   margin: auto;
+   width: 70%;
+}
+
+h1 {
+    font-family: 'Teko', sans-serif;
+    font-weight: 700;
+    color: #616369;
+}
+
+span {
+    font-family: 'Teko', sans-serif;
+    color: #29365E
+}
+
+input {
+    border: 0;
+    border-bottom: 0.6px solid white;
+    outline: 0;
+    font-size: 13px;
+    color: white;
+    background: transparent;
+}
+
+p {
+    font-size: 12px;
+}
+
+.errorAlert {
+    display: block;
+    margin-top: 12px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 0px;
+}
+
+@media (max-width: 878px) {
+    div.container-fluid.p-0.d-flex {
+        flex-direction: column;
+    }
+    div#ctnForm {
+        padding: 50px;
+        gap: 20px;
+    }
+}

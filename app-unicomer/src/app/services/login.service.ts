@@ -13,5 +13,10 @@ export class LoginService {
   getUsers() {
     return this.httpClient.get<UserModel[]>(`${environment.dataBaseUrl}/getUsers`)
   }
+
+  postUser(requestoBody: UserModel) {
+    return this.httpClient.post(`${environment.dataBaseUrl}/postUser`, requestoBody)
+  }
 }
+
 

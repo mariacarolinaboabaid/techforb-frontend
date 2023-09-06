@@ -14,32 +14,37 @@
 
         <div class="row w-100">
 
-                <div class="container-fluid d-flex align-items-center">
-                    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-                        <!-- Username -->
-                        <div class="row">
-                            <label for="username" class="text-white p-0 mb-2">Username</label>
-                            <input type="text" class="p-0" id="username" name="username" [(ngModel)]="usernameInput" required>
-                            <span [hidden]="hideMessageErrorEmail" class="errorAlert">E-mail not registered!</span>
-                        </div>
-                        <!-- Password -->
-                        <div class="row mt-5">
-                            <label for="password" class="text-white p-0 mb-2">Password</label>
-                            <input type="password" class="p-0" id="password" name="password" [(ngModel)]="passwordInput" required>
-                            <span [hidden]="hideMessageErrorPassword" class="errorAlert">Incorrect password</span>
-                        </div>
-                        <!-- Button -->
-                        <div class="row mt-5">
-                            <button  [disabled]="loginForm.form.invalid" class="btn btn-light rounded-pill px-3" type="submit">Ingressar</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="container-fluid d-flex align-items-center">
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <!-- Username -->
+                    <div class="row">
+                        <label for="username" class="text-white p-0 mb-2">
+                            Nombre de usuario
+                        </label>
+                        <input type="text" class="p-0" id="username" name="username" [(ngModel)]="usernameInput"
+                            required>
+                        <span [hidden]="hideMessageErrorEmail" class="errorAlert">Usuario no regristrado</span>
+                    </div>
+                    <!-- Password -->
+                    <div class="row mt-5">
+                        <label for="password" class="text-white p-0 mb-2">Contraseña</label>
+                        <input type="password" class="p-0" id="password" name="password" [(ngModel)]="passwordInput"
+                            required>
+                        <span [hidden]="hideMessageErrorPassword" class="errorAlert">Contraseña incorrecta</span>
+                    </div>
+                    <!-- Button -->
+                    <div class="row mt-5">
+                        <button [disabled]="loginForm.form.invalid" class="btn btn-light rounded-pill px-3"
+                            type="submit">Ingressar</button>
+                    </div>
+                </form>
+            </div>
         </div>
-       
+
         <!-- Register account link -->
         <div class="row w-100 text-center">
             <p class="text-white" style="font-weight: 300;">¿No tienes una cuenta?</p>
-            <p ><a class="text-white" href="#">¡Haga clic aquí para crear una!</a></p>
+            <p><a class="text-white" routerLink="/register">¡Haga clic aquí para crear una!</a></p>
         </div>
     </div>
 
