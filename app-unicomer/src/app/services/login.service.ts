@@ -14,8 +14,19 @@ export class LoginService {
     return this.httpClient.get<UserModel[]>(`${environment.dataBaseUrl}/getUsers`)
   }
 
-  postUser(requestoBody: UserModel) {
-    return this.httpClient.post(`${environment.dataBaseUrl}/postUser`, requestoBody)
+  postUser(requestBody: UserModel) {
+    return this.httpClient.post(`${environment.dataBaseUrl}/postUser`, requestBody)
+  }
+
+  loggedCheck(){
+    let isLoggedIn = localStorage.getItem('isLoggedIn') 
+    if (isLoggedIn === null) {
+      isLoggedIn = "false"
+      return false
+    }
+    else {
+      return true
+    }
   }
 }
 

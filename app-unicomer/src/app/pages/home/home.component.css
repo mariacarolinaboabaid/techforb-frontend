@@ -1,0 +1,45 @@
+#ctnHome {
+    max-width: 70%;
+    top: 70px;
+    left: 300px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+#cardBalance {
+    background-image: url('../../../assets/bg-balance.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+#saldo {
+    font-size: 30px;
+}
+
+.iconTransaction {
+    width: 30px;
+}
+
+th {
+    font-size: 14px;
+}
+
+td {
+    font-size: 12px;
+}
+
+@media (max-width: 565px) {
+    #ctnHome {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    #ctnHome {
+        max-width: 80%;
+        left: 115px;
+    }
+}

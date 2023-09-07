@@ -12,13 +12,16 @@ export class RegisterUserComponent {
   usernameInput = '';
   passwordInput = '';
 
+
   constructor(private loginService: LoginService, private router: Router) { }
+
 
   onSubmit() {
     const postData = {
       "username": this.usernameInput,
       "password": this.passwordInput
     }
+
     this.loginService.postUser(postData)
       .subscribe((result) => {
           console.log(result)

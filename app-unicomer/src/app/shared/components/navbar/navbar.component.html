@@ -1,6 +1,6 @@
 <nav id="navbar"
-    class="navbar navbar-expand-lg bg-body-tertiary position-absolute top-0 start-0 h-100 align-items-start">
-    <div class="container-fluid flex-column flex-nowrap align-items-start mx-3 my-4" id="ctnContent">
+    class="navbar navbar-expand-lg bg-body-tertiary position-fixed top-0 start-0 align-items-start">
+    <div class="container-fluid flex-column flex-nowrap align-items-start  my-4" id="ctnContent">
 
         <!-- Logo -->
         <h3 class="navbar-brand">LOGO</h3>
@@ -17,32 +17,18 @@
 
                 <li class="nav-item d-flex align-items-baseline">
                     <img class="iconNavbar" src="../../../../assets/home.png" alt="home">
-                    <a class="nav-link px-2" aria-current="page" href="#">Home</a>
+                    <a class="nav-link px-2" aria-current="page" routerLink="/home">Home</a>
                 </li>
 
                 <li class="nav-item d-flex align-items-baseline mt-3">
-                    <img class="iconNavbar" src="../../../../assets/transferir.png" alt="transferir"
+                    <img class="iconNavbar" src="../../../../assets/transferir.png" alt="operaciones"
                         style="height: 18px;">
-                    <a class="nav-link px-2" href="#">Transferir</a>
-                </li>
-
-                <li class="nav-item d-flex align-items-baseline mt-3">
-                    <img class="iconNavbar" src="../../../../assets/sacar.png" alt="sacar">
-                    <a class="nav-link px-2" href="#">Sacar</a>
-                </li>
-
-                <li class="nav-item d-flex align-items-baseline mt-3">
-                    <img class="iconNavbar" src="../../../../assets/depositar.png" alt="depositar">
-                    <a class="nav-link px-2" href="#">Depositar</a>
+                    <a class="nav-link px-2" routerLink="/registerOperation">Operaciones</a>
                 </li>
 
                 <li class="nav-item d-flex align-items-baseline mt-3">
                     <img class="iconNavbar" src="../../../../assets/registrarCartao.png" alt="registrar tarjeta">
-                    <a class="nav-link px-2" aria-disabled="true">Registrar tarjeta</a>
-                </li>
-                <li class="nav-item d-flex align-items-baseline mt-3">
-                    <img class="iconNavbar" src="../../../../assets/salir.png" alt="registrar tarjeta">
-                    <a class="nav-link px-2" aria-disabled="true">Salir</a>
+                    <a class="nav-link px-2" aria-disabled="true" routerLink="/registerOperation">Registrar tarjeta</a>
                 </li>
             </ul>
         </div>
@@ -50,13 +36,14 @@
 </nav>
 
 <div class="container position-absolute top-0 end-0 d-flex justify-content-end align-items-center py-2">
-    <!-- Search -->
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
 
-    <div>
-        <a class="nav-link px-2" aria-disabled="true"><img class="iconNavbar" src="../../../../assets/user.png" alt="usuario"></a>
-    </div>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="iconNavbar p-0" src="../../../../assets/user.png" alt="usuario">
+        </a>
+        <ul class="dropdown-menu text-small shadow" style="">
+          <li><a class="dropdown-item" (click)="logout()">Salir</a></li>
+        </ul>
+      </div>
 </div>
+

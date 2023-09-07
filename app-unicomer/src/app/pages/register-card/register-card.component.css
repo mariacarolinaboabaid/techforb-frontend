@@ -1,0 +1,35 @@
+#ctn {
+    max-width: 70%;
+    top: 70px;
+    left: 300px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+label, input, select {
+    font-size: 14px;
+}
+
+.errorAlert {
+    display: block;
+    margin-top: 12px;
+    color: red;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    padding: 0px;
+}
+
+@media (max-width: 565px) {
+    #ctn {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 991px) {
+    #ctn {
+        max-width: 80%;
+        left: 115px;
+    }
+}

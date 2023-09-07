@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { UserModel } from 'src/app/shared/models/userModel';
 
@@ -21,7 +22,8 @@ export class LoginComponent {
   hideMessageErrorEmail: boolean = true
   message: string = ''
 
-  constructor(private loginService: LoginService) { }
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   onSubmit() {
     // GETTING THE USERS
@@ -41,6 +43,12 @@ export class LoginComponent {
 
             if (this.passwordInput === user.password) {
               this.validationPassword = true
+              if (user.id !== undefined) {
+                localStorage.setItem('userId', user.id.toString());
+              } else {
+                // Lida com o caso em que user.id é undefined (opcional)
+                console.error('ID undefined.');
+              }
               break
             }
           }
@@ -48,7 +56,8 @@ export class LoginComponent {
 
         if (this.validationEmail === true && this.validationPassword === true) {
           localStorage.setItem('isLoggedIn', 'true');
-          console.log("logado")
+          this.router.navigate(['/home'])
+         
         }
         else if (this.validationEmail === true && this.validationPassword === false) {
           console.log("senha errada")

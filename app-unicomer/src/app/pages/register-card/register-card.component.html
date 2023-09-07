@@ -1,0 +1,33 @@
+<div id="ctn" class="container-fluid position-absolute d-flex flex-column align-items-center justify-content-around">
+
+    <!-- Title -->
+    <h1 class="mb-3">Registro de tarjeta</h1>
+
+    <div class="container-fluid">
+
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <!-- Date -->
+            <div class="row">
+                <label for="date" class="form-label p-0">
+                    Fecha de expiración
+                </label>
+                <input type="date" class="form-control" id="date" name="date" [(ngModel)]="dateInput" required #date="ngModel">
+                <span *ngIf="date.invalid && form.form.touched" class="errorAlert">Campo obligatorio</span>
+            </div>
+
+            <!-- Number card -->
+            <div class="row mt-3">
+                <label for="value" class="form-label p-0">Número</label>
+                <input type="text" maxlength="16" minlength="16" step="0.01" class="form-control" id="value" name="value" [(ngModel)]="numberInput" required
+                    #value="ngModel">
+                <span *ngIf="value.invalid && form.form.touched" class="errorAlert">Campo obligatorio</span>
+            </div>
+
+            <!-- Button -->
+            <div class="row mt-5">
+                <button [disabled]="form.form.invalid" class="btn btn-dark rounded-pill px-3"
+                    type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>

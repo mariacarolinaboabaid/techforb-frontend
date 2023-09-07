@@ -3,23 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { PublicModule } from './shared/layouts/public/public.module';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { PrivateModule } from './shared/layouts/private/private.module';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PublicModule
+    PublicModule,
+    PrivateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

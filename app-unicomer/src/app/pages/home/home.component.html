@@ -1,0 +1,64 @@
+<div id="ctnHome" class="container-fluid m-0 p-0 position-absolute">
+
+    <!-- Title -->
+    <h1 class="mb-3">Início</h1>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col col-lg-4 mt-4">
+                <!-- Balance -->
+                <div class="card" id="cardBalance">
+                    <div class="card-body">
+                        <h5 class="card-title text-white pt-3 mb-4">Tu saldo</h5>
+                        <p id="saldo" class="card-text text-white text-center">{{ balance |
+                            currency:'BRL':'symbol':'1.2-2'}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions-->
+            <div class="col col-12 col-lg-8 p-3 py-0 mt-4 ">
+                <h5>Transacciones más recientes</h5>
+                <table class="table table-responsive table-hover mb-0">
+                    <tbody class="table" style="background-color: #A6AAC7;">
+                        <tr *ngFor="let item of arrayTransactions">
+                            <td *ngIf="item.type === 'deposito'"><img class="iconTransaction"
+                                    src="../../../assets/positivo.png" alt="sinal positivo"></td>
+                            <td *ngIf="item.type === 'transferencia' || item.type === 'saque'"><img
+                                    class="iconTransaction" src="../../../assets/negativo.png" alt="sinal negativo">
+                            </td>
+                            <td>{{item.date}}</td>
+                            <td>{{item.type}}</td>
+                            <td>{{item.value | currency:'BRL':'symbol':'1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col col-md-0 col-lg-4"></div>
+
+                <!-- Cards-->
+                <div class="col col-12 col-lg-8 mt-4 p-4">
+                    <h5>Tarjetas registradas</h5>
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Fecha de expiración</th>
+                                <th>Número</th>
+                            </tr>
+                        <tbody class="table">
+                            <tr *ngFor="let item of arrayCards">
+                                <td>{{item.expirationDate}}</td>
+                                <td>{{item.number}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
